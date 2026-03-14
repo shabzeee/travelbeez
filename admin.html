@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TravelBeez Admin — Booking Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+  <!-- ===== LOGIN SCREEN ===== -->
+  <div id="login-screen">
+    <div class="login-card">
+      <div class="login-logo">🐝 <span>travel<b>beez</b></span></div>
+      <h2>Admin Login</h2>
+      <p>Enter your admin password to access the booking dashboard.</p>
+      <form id="login-form">
+        <div class="login-field">
+          <label>Password</label>
+          <input type="password" id="login-password" placeholder="Enter admin password" autocomplete="current-password" />
+        </div>
+        <p class="login-error" id="login-error"></p>
+        <button type="submit" class="btn-primary" id="login-btn">Login →</button>
+      </form>
+      <a href="/" class="back-link">← Back to website</a>
+    </div>
+  </div>
+
+  <!-- ===== DASHBOARD ===== -->
+  <div id="dashboard" style="display:none">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">🐝 <span>travel<b>beez</b></span></div>
+      <nav class="sidebar-nav">
+        <a href="#" class="sidebar-link active" data-section="bookings">
+          <i data-lucide="calendar-check"></i> Bookings
+        </a>
+        <a href="#" class="sidebar-link" data-section="slots">
+          <i data-lucide="clock"></i> Block Slots
+        </a>
+        <a href="/" class="sidebar-link">
+          <i data-lucide="globe"></i> View Website
+        </a>
+      </nav>
+      <button class="sidebar-logout" id="logout-btn">
+        <i data-lucide="log-out"></i> Logout
+      </button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- Top bar -->
+      <div class="topbar">
+        <div>
+          <h1 id="page-title">Bookings</h1>
+          <p class="topbar-sub" id="page-sub">Manage all consultation appointments</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="btn-refresh" id="refresh-btn" title="Refresh">
+            <i data-lucide="refresh-cw"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- ===== BOOKINGS SECTION ===== -->
+      <section id="section-bookings">
+
+        <!-- Stats Cards -->
+        <div class="stats-grid" id="stats-grid">
+          <div class="stat-card total">
+            <div class="stat-icon"><i data-lucide="users"></i></div>
+            <div><div class="stat-num" id="stat-total">—</div><div class="stat-label">Total</div></div>
+          </div>
+          <div class="stat-card pending">
+            <div class="stat-icon"><i data-lucide="clock"></i></div>
+            <div><div class="stat-num" id="stat-pending">—</div><div class="stat-label">Pending</div></div>
+          </div>
+          <div class="stat-card confirmed">
+            <div class="stat-icon"><i data-lucide="check-circle"></i></div>
+            <div><div class="stat-num" id="stat-confirmed">—</div><div class="stat-label">Confirmed</div></div>
+          </div>
+          <div class="stat-card cancelled">
+            <div class="stat-icon"><i data-lucide="x-circle"></i></div>
+            <div><div class="stat-num" id="stat-cancelled">—</div><div class="stat-label">Cancelled</div></div>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-bar">
+          <div class="filter-group">
+            <label>Status</label>
+            <select id="filter-status">
+              <option value="">All Statuses</option>
+              <option value="pending">Pending</option>
+              <option value="confirmed">Confirmed</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Service</label>
+            <select id="filter-service">
+              <option value="">All Services</option>
+              <option>Visa Consultation</option>
+              <option>Holiday Package</option>
+              <option>Flight Booking</option>
+              <option>Hotel Booking</option>
+              <option>Custom Tour</option>
+              <option>Travel Insurance</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Date</label>
+            <input type="date" id="filter-date" />
+          </div>
+          <button class="btn-outline" id="apply-filters">Apply</button>
+          <button class="btn-ghost" id="clear-filters">Clear</button>
+        </div>
+
+        <!-- Table -->
+        <div class="table-card">
+          <div class="table-header-row">
+            <span id="table-count" class="table-count"></span>
+            <div class="table-search">
+              <i data-lucide="search"></i>
+              <input type="text" id="search-input" placeholder="Search name, phone, destination..." />
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table id="bookings-table">
+              <thead>
+                <tr>
+                  <th>#ID</th>
+                  <th>Name</th>
+                  <th>Phone</th>
+                  <th>Service</th>
+                  <th>Destination</th>
+                  <th>Date</th>
+                  <th>Slot</th>
+                  <th>Status</th>
+                  <th>Booked On</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="bookings-tbody">
+                <tr><td colspan="10" class="table-loading">Loading bookings...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== BLOCK SLOTS SECTION ===== -->
+      <section id="section-slots" style="display:none">
+        <div class="block-card">
+          <h3>Block / Unblock a Slot</h3>
+          <p>Prevent bookings on specific date and time combinations (e.g., public holidays, office closures).</p>
+          <div class="block-form">
+            <div class="filter-group">
+              <label>Date</label>
+              <input type="date" id="block-date" />
+            </div>
+            <div class="filter-group">
+              <label>Time Slot</label>
+              <select id="block-slot">
+                <option value="09:00">9:00 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="13:00">1:00 PM</option>
+                <option value="14:00">2:00 PM</option>
+                <option value="15:00">3:00 PM</option>
+                <option value="16:00">4:00 PM</option>
+                <option value="17:00">5:00 PM</option>
+                <option value="18:00">6:00 PM</option>
+              </select>
+            </div>
+            <div class="filter-group" style="flex:1">
+              <label>Reason (optional)</label>
+              <input type="text" id="block-reason" placeholder="e.g. Public holiday" />
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;margin-top:12px">
+            <button class="btn-primary" id="do-block">Block Slot</button>
+            <button class="btn-danger-outline" id="do-unblock">Unblock Slot</button>
+          </div>
+          <p class="block-msg" id="block-msg"></p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Booking Detail Modal -->
+  <div class="detail-overlay" id="detail-overlay">
+    <div class="detail-modal">
+      <div class="detail-header">
+        <h3>Booking Details</h3>
+        <button class="bk-close" id="detail-close">✕</button>
+      </div>
+      <div id="detail-body"></div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

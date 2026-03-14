@@ -1,0 +1,4 @@
+node_modules/
+.env
+travelbeez_db.json
+.DS_Store

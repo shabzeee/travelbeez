@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TravelBeez – Your Gateway to the World. Visa assistance, luxury holiday packages, and custom tours for international travelers. Schengen, USA, UK, UAE visas. European, Bali, Dubai packages." />
+  <title>TravelBeez | Your Gateway to the World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Lucide Icons via CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" id="nav-logo-link">
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" fill="#00AEEF" opacity="0.15"/>
+            <path d="M6 14 Q10 6 14 10 Q18 14 22 8" stroke="#00AEEF" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <circle cx="22" cy="8" r="3" fill="#00AEEF"/>
+            <path d="M4 18 Q8 22 14 20 Q20 18 24 22" stroke="#1A2B3C" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+          </svg>
+        </div>
+        <span class="logo-text">travel<span class="logo-accent">beez</span></span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#visas" class="nav-link">Visas</a></li>
+        <li><a href="#packages" class="nav-link">Packages</a></li>
+        <li><a href="#destinations" class="nav-link">Destinations</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+    <div class="nav-actions">
+      <a href="tel:+919778742816" class="nav-phone">
+        <i data-lucide="phone"></i>
+        <span>+91 9778742816</span>
+      </a>
+      <a href="#contact" class="btn btn-primary" id="book-now-btn">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="assets/images/hero_bg.png" alt="Paris Eiffel Tower and Dubai Burj Khalifa" class="hero-bg-img" />
+      <div class="hero-overlay"></div>
+      <!-- Floating particles -->
+      <div class="particle p1"></div>
+      <div class="particle p2"></div>
+      <div class="particle p3"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i data-lucide="shield-check"></i>
+        <span>IATA Accredited Agency · 10+ Years of Excellence</span>
+      </div>
+      <h1 class="hero-title">Your Gateway<br /><span class="hero-title-accent">to the World.</span></h1>
+      <p class="hero-subtitle">Visa assistance, luxury packages & custom tours for discerning travelers. Your dream destination is one click away.</p>
+
+      <!-- Quick Quote Form -->
+      <div class="hero-form-card">
+        <div class="form-tabs">
+          <button class="form-tab active" data-tab="flights" id="tab-flights">
+            <i data-lucide="plane"></i> Flights
+          </button>
+          <button class="form-tab" data-tab="hotels" id="tab-hotels">
+            <i data-lucide="building-2"></i> Hotels
+          </button>
+          <button class="form-tab" data-tab="visa" id="tab-visa">
+            <i data-lucide="passport"></i> Visa
+          </button>
+          <button class="form-tab" data-tab="packages" id="tab-packages">
+            <i data-lucide="map"></i> Packages
+          </button>
+        </div>
+        <form class="hero-search-form" id="hero-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label><i data-lucide="user"></i> Full Name</label>
+              <input type="text" placeholder="Your name" id="form-name" />
+            </div>
+            <div class="form-group">
+              <label><i data-lucide="map-pin"></i> Destination</label>
+              <input type="text" placeholder="Where to?" id="form-destination" />
+            </div>
+            <div class="form-group">
+              <label><i data-lucide="layers"></i> Service</label>
+              <select id="form-service">
+                <option value="">Select service</option>
+                <option>Visa Assistance</option>
+                <option>Holiday Package</option>
+                <option>Flight Booking</option>
+                <option>Hotel Booking</option>
+                <option>Custom Tour</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label><i data-lucide="phone"></i> Phone</label>
+              <input type="tel" placeholder="+91 98765 43210" id="form-phone" />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-search" id="search-btn">
+            <i data-lucide="search"></i>
+            Get Free Quote
+          </button>
+        </form>
+      </div>
+
+      <!-- Stats -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num" data-target="15000">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Happy Travelers</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="98">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">Visa Success Rate</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="50">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Destinations</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="10">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BAR ===== -->
+  <section class="trust-bar">
+    <div class="container">
+      <span class="trust-label">Trusted & Recognized By</span>
+      <div class="trust-logos">
+        <div class="trust-logo-item">
+          <div class="trust-logo-badge iata">IATA</div>
+          <span>Accredited</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-logo-item">
+          <svg class="tripadvisor-logo" viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="8" cy="12" r="7" fill="#00AF87"/>
+            <circle cx="8" cy="12" r="3.5" fill="white"/>
+            <circle cx="8" cy="12" r="1.5" fill="#00AF87"/>
+            <text x="18" y="17" font-family="Arial" font-weight="bold" font-size="11" fill="#34322F">TripAdvisor</text>
+          </svg>
+          <span>4.8 ★ Rating</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-logo-item">
+          <div class="google-logo-g">
+            <svg viewBox="0 0 24 24" width="24" height="24">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </div>
+          <span>4.9 ★ Reviews</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-logo-item">
+          <div class="trust-logo-badge verified">✔ Verified</div>
+          <span>Secure Payments</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-logo-item">
+          <div class="trust-logo-badge ministry">MOT</div>
+          <span>Ministry of Tourism</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VISA SERVICES ===== -->
+  <section class="visa-section" id="visas">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i data-lucide="passport"></i> Visa Services</span>
+        <h2 class="section-title">We Handle Your <span class="text-accent">Visa Stress</span></h2>
+        <p class="section-subtitle">Expert guidance and 98% visa approval success rate across 50+ countries. We make international travel effortless.</p>
+      </div>
+
+      <div class="visa-grid">
+        <!-- Schengen -->
+        <div class="visa-card" id="visa-schengen">
+          <div class="visa-card-inner">
+            <div class="visa-flag-row">
+              <div class="flag-grid schengen-flags">
+                <span>🇫🇷</span><span>🇩🇪</span><span>🇪🇸</span><span>🇮🇹</span>
+              </div>
+              <span class="visa-badge popular">Most Popular</span>
+            </div>
+            <h3 class="visa-title">Schengen Visa</h3>
+            <p class="visa-desc">Access 27 European countries with a single visa. Perfect for Europe summer tours, business travel, and multi-country exploration.</p>
+            <ul class="visa-features">
+              <li><i data-lucide="check-circle"></i> 27 Countries Access</li>
+              <li><i data-lucide="check-circle"></i> 15 Days Processing</li>
+              <li><i data-lucide="check-circle"></i> Document Assistance</li>
+              <li><i data-lucide="check-circle"></i> Interview Prep</li>
+            </ul>
+            <div class="visa-card-footer">
+              <div class="visa-price">From <strong>₹8,999</strong></div>
+              <a href="#contact" class="btn btn-outline-primary learn-more-btn">Learn More <i data-lucide="arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- USA Visa -->
+        <div class="visa-card" id="visa-usa">
+          <div class="visa-card-inner">
+            <div class="visa-flag-row">
+              <div class="flag-grid">
+                <span style="font-size:2.5rem">🇺🇸</span>
+              </div>
+              <span class="visa-badge premium">Premium</span>
+            </div>
+            <h3 class="visa-title">USA Visa (B1/B2)</h3>
+            <p class="visa-desc">Tourist and business visas for the United States. Complete DS-160 support, appointment booking, and mock interview coaching.</p>
+            <ul class="visa-features">
+              <li><i data-lucide="check-circle"></i> DS-160 Form Filing</li>
+              <li><i data-lucide="check-circle"></i> Slot Booking</li>
+              <li><i data-lucide="check-circle"></i> Mock Interview</li>
+              <li><i data-lucide="check-circle"></i> 100% Document Review</li>
+            </ul>
+            <div class="visa-card-footer">
+              <div class="visa-price">From <strong>₹12,999</strong></div>
+              <a href="#contact" class="btn btn-outline-primary learn-more-btn">Learn More <i data-lucide="arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- UK Visa -->
+        <div class="visa-card" id="visa-uk">
+          <div class="visa-card-inner">
+            <div class="visa-flag-row">
+              <div class="flag-grid">
+                <span style="font-size:2.5rem">🇬🇧</span>
+              </div>
+              <span class="visa-badge fast">Fast Track</span>
+            </div>
+            <h3 class="visa-title">UK Visa</h3>
+            <p class="visa-desc">Standard Visitor, Student, and Business visas for the United Kingdom. Expert help with UKVI online applications and biometric enrollment.</p>
+            <ul class="visa-features">
+              <li><i data-lucide="check-circle"></i> UKVI Application</li>
+              <li><i data-lucide="check-circle"></i> Biometric Support</li>
+              <li><i data-lucide="check-circle"></i> Financial Docs Review</li>
+              <li><i data-lucide="check-circle"></i> Priority Service</li>
+            </ul>
+            <div class="visa-card-footer">
+              <div class="visa-price">From <strong>₹10,499</strong></div>
+              <a href="#contact" class="btn btn-outline-primary learn-more-btn">Learn More <i data-lucide="arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- UAE Visa -->
+        <div class="visa-card" id="visa-uae">
+          <div class="visa-card-inner">
+            <div class="visa-flag-row">
+              <div class="flag-grid">
+                <span style="font-size:2.5rem">🇦🇪</span>
+              </div>
+              <span class="visa-badge quick">48hr Approval</span>
+            </div>
+            <h3 class="visa-title">UAE / Dubai Visa</h3>
+            <p class="visa-desc">Tourist e-visa for Dubai and all UAE emirates. Lightning-fast 48-hour processing with 14, 30, and 90-day options available.</p>
+            <ul class="visa-features">
+              <li><i data-lucide="check-circle"></i> 48hr Processing</li>
+              <li><i data-lucide="check-circle"></i> E-Visa Delivery</li>
+              <li><i data-lucide="check-circle"></i> 14/30/90 Day Options</li>
+              <li><i data-lucide="check-circle"></i> Multi-Entry Available</li>
+            </ul>
+            <div class="visa-card-footer">
+              <div class="visa-price">From <strong>₹4,999</strong></div>
+              <a href="#contact" class="btn btn-outline-primary learn-more-btn">Learn More <i data-lucide="arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="visa-cta-row">
+        <div class="visa-success-badge">
+          <i data-lucide="trending-up"></i>
+          <strong>98% Visa Success Rate</strong> — We've processed 10,000+ visas with industry-leading approval rates.
+        </div>
+        <a href="#contact" class="btn btn-primary">Apply for Visa Now <i data-lucide="arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED PACKAGES SLIDER ===== -->
+  <section class="packages-section" id="packages">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i data-lucide="sparkles"></i> Featured Packages</span>
+        <h2 class="section-title">Curated <span class="text-accent">Luxury Experiences</span></h2>
+        <p class="section-subtitle">Handcrafted holiday packages designed for unforgettable memories. All-inclusive pricing, zero hidden costs.</p>
+      </div>
+
+      <div class="slider-wrapper">
+        <div class="packages-slider" id="packages-slider">
+
+          <!-- Package 1: European Summer -->
+          <div class="package-card" id="pkg-europe">
+            <div class="package-img-wrap">
+              <img src="assets/images/europe.png" alt="European Summer - Santorini Greece" class="package-img" />
+              <div class="package-img-overlay"></div>
+              <span class="pkg-badge">🌟 Best Seller</span>
+              <div class="pkg-duration"><i data-lucide="calendar"></i> 10 Nights / 11 Days</div>
+            </div>
+            <div class="package-body">
+              <div class="pkg-dest-tag">🇬🇷 Greece · 🇫🇷 France · 🇮🇹 Italy</div>
+              <h3 class="pkg-name">European Summer Grand Tour</h3>
+              <p class="pkg-desc">Sunset views from Santorini, the Eiffel Tower sparkle, and gelato in Rome — all in one epic journey across the Mediterranean.</p>
+              <div class="pkg-highlights">
+                <span><i data-lucide="plane"></i> Flights Included</span>
+                <span><i data-lucide="hotel"></i> 4★ Hotels</span>
+                <span><i data-lucide="utensils"></i> Breakfast</span>
+                <span><i data-lucide="shield-check"></i> Visa Help</span>
+              </div>
+              <div class="pkg-footer">
+                <div class="pkg-price-block">
+                  <span class="pkg-price-from">Starting at</span>
+                  <span class="pkg-price">₹1,89,999</span>
+                  <span class="pkg-price-per">/person</span>
+                </div>
+                <a href="#contact" class="btn btn-primary pkg-book-btn">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Package 2: Bali Escape -->
+          <div class="package-card" id="pkg-bali">
+            <div class="package-img-wrap">
+              <img src="assets/images/bali.png" alt="Bali Escape - Luxury Resort" class="package-img" />
+              <div class="package-img-overlay"></div>
+              <span class="pkg-badge">🌺 Trending</span>
+              <div class="pkg-duration"><i data-lucide="calendar"></i> 6 Nights / 7 Days</div>
+            </div>
+            <div class="package-body">
+              <div class="pkg-dest-tag">🇮🇩 Indonesia</div>
+              <h3 class="pkg-name">Bali Escape – Tropical Luxury</h3>
+              <p class="pkg-desc">Private villas with infinity pools, ancient temple blessings, rice terrace treks, and world-class Balinese spa rituals await you.</p>
+              <div class="pkg-highlights">
+                <span><i data-lucide="plane"></i> Flights Included</span>
+                <span><i data-lucide="hotel"></i> 5★ Villa</span>
+                <span><i data-lucide="waves"></i> Spa Included</span>
+                <span><i data-lucide="camera"></i> Tour Guide</span>
+              </div>
+              <div class="pkg-footer">
+                <div class="pkg-price-block">
+                  <span class="pkg-price-from">Starting at</span>
+                  <span class="pkg-price">₹79,999</span>
+                  <span class="pkg-price-per">/person</span>
+                </div>
+                <a href="#contact" class="btn btn-primary pkg-book-btn">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Package 3: Dubai Luxury -->
+          <div class="package-card" id="pkg-dubai">
+            <div class="package-img-wrap">
+              <div class="dubai-bg-img"></div>
+              <div class="package-img-overlay"></div>
+              <span class="pkg-badge">💎 Luxury</span>
+              <div class="pkg-duration"><i data-lucide="calendar"></i> 5 Nights / 6 Days</div>
+            </div>
+            <div class="package-body">
+              <div class="pkg-dest-tag">🇦🇪 UAE – Dubai</div>
+              <h3 class="pkg-name">Dubai Luxury Experience</h3>
+              <p class="pkg-desc">Desert safaris, Burj Khalifa sky-high dinners, Dubai Mall, Gold Souk, and a private yacht cruise — the ultimate Middle Eastern indulgence.</p>
+              <div class="pkg-highlights">
+                <span><i data-lucide="plane"></i> Flights Included</span>
+                <span><i data-lucide="hotel"></i> Burj Al Arab</span>
+                <span><i data-lucide="ship"></i> Yacht Cruise</span>
+                <span><i data-lucide="shield-check"></i> Visa Included</span>
+              </div>
+              <div class="pkg-footer">
+                <div class="pkg-price-block">
+                  <span class="pkg-price-from">Starting at</span>
+                  <span class="pkg-price">₹95,999</span>
+                  <span class="pkg-price-per">/person</span>
+                </div>
+                <a href="#contact" class="btn btn-primary pkg-book-btn">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Package 4: Maldives -->
+          <div class="package-card" id="pkg-maldives">
+            <div class="package-img-wrap">
+              <div class="maldives-bg-img"></div>
+              <div class="package-img-overlay"></div>
+              <span class="pkg-badge">🐠 New Deal</span>
+              <div class="pkg-duration"><i data-lucide="calendar"></i> 5 Nights / 6 Days</div>
+            </div>
+            <div class="package-body">
+              <div class="pkg-dest-tag">🇲🇻 Maldives</div>
+              <h3 class="pkg-name">Maldives Overwater Bliss</h3>
+              <p class="pkg-desc">Stay in an overwater bungalow above crystal-clear lagoons, snorkel with manta rays, and watch bioluminescent plankton beaches at midnight.</p>
+              <div class="pkg-highlights">
+                <span><i data-lucide="plane"></i> Seaplane Transfer</span>
+                <span><i data-lucide="hotel"></i> Overwater Villa</span>
+                <span><i data-lucide="fish"></i> Snorkelling</span>
+                <span><i data-lucide="utensils"></i> All Meals</span>
+              </div>
+              <div class="pkg-footer">
+                <div class="pkg-price-block">
+                  <span class="pkg-price-from">Starting at</span>
+                  <span class="pkg-price">₹1,49,999</span>
+                  <span class="pkg-price-per">/person</span>
+                </div>
+                <a href="#contact" class="btn btn-primary pkg-book-btn">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="slider-btn prev-btn" id="prev-btn" aria-label="Previous package">
+          <i data-lucide="chevron-left"></i>
+        </button>
+        <button class="slider-btn next-btn" id="next-btn" aria-label="Next package">
+          <i data-lucide="chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="slider-dots" id="slider-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i data-lucide="star"></i> Why TravelBeez</span>
+        <h2 class="section-title">Travel Smarter With <span class="text-accent">Our Expertise</span></h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon-wrap">
+            <i data-lucide="zap" class="service-icon"></i>
+          </div>
+          <h3>Fast Visa Processing</h3>
+          <p>Express visa services with dedicated case officers. We track your application from submission to stamp.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap">
+            <i data-lucide="map-pin" class="service-icon"></i>
+          </div>
+          <h3>Custom Tours</h3>
+          <p>Tailor-made itineraries built around your interests, budget, and travel style. No cookie-cutter packages.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap">
+            <i data-lucide="plane-takeoff" class="service-icon"></i>
+          </div>
+          <h3>Flight Booking</h3>
+          <p>Best airfare deals from 200+ airlines. Business class upgrades, multi-city routing, and flexible dates.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap">
+            <i data-lucide="headphones" class="service-icon"></i>
+          </div>
+          <h3>24/7 Support</h3>
+          <p>Round-the-clock assistance via WhatsApp, phone, and email. We're with you before, during, and after your trip.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap">
+            <i data-lucide="shield" class="service-icon"></i>
+          </div>
+          <h3>Travel Insurance</h3>
+          <p>Comprehensive travel insurance covering medical emergencies, trip cancellations, and lost luggage.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap">
+            <i data-lucide="credit-card" class="service-icon"></i>
+          </div>
+          <h3>Easy Payments</h3>
+          <p>Pay in EMIs, UPI, cards, or bank transfer. Secure payment gateway with PCI-DSS compliance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MEET OUR EXPERTS ===== -->
+  <section class="experts-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i data-lucide="users"></i> Our Team</span>
+        <h2 class="section-title">Meet Our <span class="text-accent">Travel Experts</span></h2>
+        <p class="section-subtitle">Seasoned professionals with deep destination knowledge and visa expertise to make your journey flawless.</p>
+      </div>
+      <div class="experts-grid">
+        <div class="expert-card">
+          <div class="expert-avatar" style="background: linear-gradient(135deg, #00AEEF, #1A2B3C)">
+            <span>AR</span>
+          </div>
+          <h4>Arjun Rao</h4>
+          <p class="expert-title">Visa Specialist · Europe & USA</p>
+          <p class="expert-bio">8 years in immigration consulting. Processed 5,000+ Schengen and US visas with 99% approval rate.</p>
+          <div class="expert-langs"><span>English</span><span>Hindi</span><span>Kannada</span></div>
+        </div>
+        <div class="expert-card expert-featured">
+          <div class="expert-avatar" style="background: linear-gradient(135deg, #f59e0b, #ef4444)">
+            <span>PM</span>
+          </div>
+          <h4>Priya Mehta</h4>
+          <p class="expert-title">Head of Luxury Packages</p>
+          <p class="expert-bio">Former luxury hotel manager turned travel architect. Specializes in Maldives, Bali, and European luxury itineraries.</p>
+          <div class="expert-langs"><span>English</span><span>Hindi</span><span>Marathi</span></div>
+        </div>
+        <div class="expert-card">
+          <div class="expert-avatar" style="background: linear-gradient(135deg, #10b981, #0ea5e9)">
+            <span>SK</span>
+          </div>
+          <h4>Salim Khan</h4>
+          <p class="expert-title">UAE & Middle East Expert</p>
+          <p class="expert-bio">Bilingual travel consultant with 12 years in Dubai tourism. Your go-to for UAE visas and Gulf packages.</p>
+          <div class="expert-langs"><span>English</span><span>Arabic</span><span>Urdu</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag light"><i data-lucide="message-circle"></i> Testimonials</span>
+        <h2 class="section-title light">What Our <span class="text-accent-light">Travelers Say</span></h2>
+      </div>
+
+      <div class="testimonials-slider-wrapper">
+        <div class="testimonials-track" id="testimonials-track">
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"TravelBeez made our Schengen visa process completely stress-free. Got approved in 12 days! The European Summer package was absolutely breathtaking — Santorini was a dream."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#00AEEF">RS</div>
+              <div>
+                <strong>Rohit Sharma</strong>
+                <span>Mumbai · Schengen Visa + Europe Tour</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"The Dubai Luxury package was worth every rupee. Private yacht dinner with Burj Al Arab views? Unbelievable! Salim was available on WhatsApp even at midnight — truly 24/7 service."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#f59e0b">AN</div>
+              <div>
+                <strong>Aisha Nair</strong>
+                <span>Bangalore · Dubai Luxury Package</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"Applied for US B2 visa through TravelBeez. Their mock interview coaching was phenomenal — I felt completely prepared. Visa stamped in 3 weeks. Superhappy client!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#10b981">KP</div>
+              <div>
+                <strong>Kavya Pillai</strong>
+                <span>Chennai · USA B2 Tourist Visa</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"Our Bali honeymoon was perfection. The villa with the private infinity pool was magical. Priya designed every detail of our itinerary — spa, temples, cooking class. Absolute 10/10!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#8b5cf6">VG</div>
+              <div>
+                <strong>Vikram &amp; Gayatri</strong>
+                <span>Delhi · Bali Honeymoon Package</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <button class="slider-btn t-prev" id="t-prev" aria-label="Previous testimonial"><i data-lucide="chevron-left"></i></button>
+        <button class="slider-btn t-next" id="t-next" aria-label="Next testimonial"><i data-lucide="chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DESTINATIONS / BLOG ===== -->
+  <section class="destinations-section" id="destinations">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i data-lucide="compass"></i> Destinations</span>
+        <h2 class="section-title">Explore Top <span class="text-accent">Destinations</span></h2>
+        <p class="section-subtitle">Discover country guides, travel tips, and visa information for the world's most sought-after destinations.</p>
+      </div>
+
+      <div class="dest-grid">
+        <div class="dest-card dest-large">
+          <div class="dest-bg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+            <span class="dest-emoji">🇫🇷</span>
+          </div>
+          <div class="dest-info">
+            <h3>France</h3>
+            <p>Eiffel Tower · Wine country · Loire chateaux</p>
+            <span class="dest-tag-small">Schengen Visa</span>
+          </div>
+        </div>
+        <div class="dest-card">
+          <div class="dest-bg" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)">
+            <span class="dest-emoji">🇯🇵</span>
+          </div>
+          <div class="dest-info">
+            <h3>Japan</h3>
+            <p>Sakura season · Tokyo · Mt. Fuji</p>
+            <span class="dest-tag-small">Japan Visa</span>
+          </div>
+        </div>
+        <div class="dest-card">
+          <div class="dest-bg" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)">
+            <span class="dest-emoji">🇹🇭</span>
+          </div>
+          <div class="dest-info">
+            <h3>Thailand</h3>
+            <p>Beaches · Temples · Street Food</p>
+            <span class="dest-tag-small">Visa on Arrival</span>
+          </div>
+        </div>
+        <div class="dest-card">
+          <div class="dest-bg" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)">
+            <span class="dest-emoji">🇲🇻</span>
+          </div>
+          <div class="dest-info">
+            <h3>Maldives</h3>
+            <p>Overwater villas · Coral reefs · Lagoons</p>
+            <span class="dest-tag-small">Visa on Arrival</span>
+          </div>
+        </div>
+        <div class="dest-card dest-large">
+          <div class="dest-bg" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%)">
+            <span class="dest-emoji">🇮🇹</span>
+          </div>
+          <div class="dest-info">
+            <h3>Italy</h3>
+            <p>Rome · Florence · Amalfi Coast · Venice</p>
+            <span class="dest-tag-small">Schengen Visa</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT / LEAD GEN ===== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="section-tag"><i data-lucide="phone-call"></i> Get In Touch</span>
+          <h2 class="section-title">Book a <span class="text-accent">Free Consultation</span></h2>
+          <p>Our travel experts are ready to plan your perfect trip. Tell us your dream destination and we'll handle everything — visas, flights, hotels, and more.</p>
+
+          <div class="contact-details">
+            <div class="contact-detail-item">
+              <i data-lucide="map-pin"></i>
+              <div>
+                <strong>Our Office</strong>
+                <span>Near Gheetha Weddings Kollam,<br/>Koyilandy, Kozhikode, India – 673305</span>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <i data-lucide="phone"></i>
+              <div>
+                <strong>Call Us</strong>
+                <span>+91 9778742816<br/>+91 8075316833</span>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <i data-lucide="mail"></i>
+              <div>
+                <strong>Email</strong>
+                <span>travelbeez55@gmail.com</span>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <i data-lucide="clock"></i>
+              <div>
+                <strong>Office Hours</strong>
+                <span>Mon–Sat: 9am – 8pm IST</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map embed placeholder -->
+          <div class="map-placeholder">
+            <i data-lucide="map"></i>
+            <span>india, kozhikode, Koyilandy, Near Gheetha Weddings Kollam, 673305</span>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <h3>Get a Free Consultation</h3>
+          <p>Fill in your details and we'll respond within 2 hours.</p>
+          <form class="contact-form" id="contact-form">
+            <div class="cf-row">
+              <div class="cf-group">
+                <label>Full Name *</label>
+                <input type="text" placeholder="Your full name" required id="cf-name" />
+              </div>
+              <div class="cf-group">
+                <label>Phone Number *</label>
+                <input type="tel" placeholder="+91 98765 43210" required id="cf-phone" />
+              </div>
+            </div>
+            <div class="cf-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="you@email.com" id="cf-email" />
+            </div>
+            <div class="cf-row">
+              <div class="cf-group">
+                <label>Destination</label>
+                <input type="text" placeholder="Where do you want to go?" id="cf-dest" />
+              </div>
+              <div class="cf-group">
+                <label>Service Needed</label>
+                <select id="cf-service">
+                  <option value="">Select...</option>
+                  <option>Visa Assistance</option>
+                  <option>Holiday Package</option>
+                  <option>Flight Booking</option>
+                  <option>Custom Tour</option>
+                </select>
+              </div>
+            </div>
+            <div class="cf-group">
+              <label>Message / Travel Details</label>
+              <textarea placeholder="Tell us about your travel plans, preferred dates, group size..." rows="3" id="cf-message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="cf-submit-btn">
+              <i data-lucide="send"></i>
+              Send My Request
+            </button>
+            <p class="form-disclaimer"><i data-lucide="lock"></i> Your information is 100% secure and never shared.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <a href="#" class="nav-logo">
+              <div class="logo-icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <circle cx="14" cy="14" r="13" fill="#00AEEF" opacity="0.2"/>
+                  <path d="M6 14 Q10 6 14 10 Q18 14 22 8" stroke="#00AEEF" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                  <circle cx="22" cy="8" r="3" fill="#00AEEF"/>
+                </svg>
+              </div>
+              <span class="logo-text">travel<span class="logo-accent">beez</span></span>
+            </a>
+            <p class="footer-tagline">Your Gateway to the World. Visa assistance, luxury packages & unforgettable travel experiences since 2014.</p>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook" class="social-link">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              </a>
+              <a href="#" aria-label="Instagram" class="social-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="#" aria-label="Twitter/X" class="social-link">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="#" aria-label="YouTube" class="social-link">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="white" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+              </a>
+              <a href="https://wa.me/919999999999" aria-label="WhatsApp" class="social-link whatsapp-social">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#visas">Visa Services</a></li>
+              <li><a href="#packages">Holiday Packages</a></li>
+              <li><a href="#destinations">Destinations</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Visa Services -->
+          <div class="footer-col">
+            <h4>Visa Services</h4>
+            <ul class="footer-links">
+              <li><a href="#visas">Schengen Visa</a></li>
+              <li><a href="#visas">USA Visa (B1/B2)</a></li>
+              <li><a href="#visas">UK Visa</a></li>
+              <li><a href="#visas">UAE / Dubai Visa</a></li>
+              <li><a href="#visas">Canada Visa</a></li>
+              <li><a href="#visas">Australia Visa</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact & Certifications -->
+          <div class="footer-col">
+            <h4>Contact Us</h4>
+            <ul class="footer-contact-list">
+              <li><i data-lucide="map-pin"></i> India, Kozhikode, Koyilandy, Near Gheetha Weddings Kollam – 673305</li>
+              <li><i data-lucide="phone"></i> +91 9778742816 / +91 8075316833</li>
+              <li><i data-lucide="mail"></i> travelbeez55@gmail.com</li>
+            </ul>
+            <div class="footer-badges">
+              <span class="footer-badge">IATA Accredited</span>
+              <span class="footer-badge">ISO 9001:2015</span>
+              <span class="footer-badge">MOT Approved</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2024 TravelBeez. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <p>Designed with ❤️ for travelers worldwide.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== STICKY WHATSAPP + CONSULTATION BUTTON ===== -->
+  <div class="floating-actions" id="floating-actions">
+    <a href="https://wa.me/919999999999?text=Hi%20TravelBeez!%20I%20need%20help%20with%20travel%20planning." 
+       class="fab-btn fab-whatsapp" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       id="whatsapp-fab"
+       aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      <span class="fab-tooltip">Chat on WhatsApp</span>
+    </a>
+    <a href="#contact" class="fab-btn fab-consult" id="consult-fab" aria-label="Free Consultation">
+      <i data-lucide="phone-call"></i>
+      <span class="fab-tooltip">Free Consultation</span>
+    </a>
+  </div>
+
+  <!-- Success Modal -->
+  <div class="modal-overlay" id="success-modal">
+    <div class="modal-card">
+      <div class="modal-icon">✈️</div>
+      <h3>Request Received!</h3>
+      <p>Thank you for contacting TravelBeez. Our travel expert will call you within <strong>2 hours</strong>.</p>
+      <p class="modal-whatsapp-msg">Or reach us instantly on WhatsApp:</p>
+      <a href="https://wa.me/919999999999" class="btn btn-primary" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="margin-right:6px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Message on WhatsApp
+      </a>
+      <button class="modal-close" id="modal-close">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="booking.js"></script>
+</body>
+</html>
